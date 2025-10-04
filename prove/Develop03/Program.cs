@@ -14,4 +14,15 @@ class Program
         new Scripture(new ReferenceEqualityComparer("Philippians", 4, 13),
         "I can do all things through Christ which strengtheneth me.")))
     };
+
+    Random random = new Random();
+    Scripture scripture = scriptures[Random.Next(scriptures.Count)];
+
+    while (true)
+    {
+        SafeClear();
+    Console.writeLine(scripture.GetDisplayText());
+        console.writeLine("\nPress enter to hide more words or type 'quit' to end:");
+        string input = Console.ReadLine();
+    }
 }
