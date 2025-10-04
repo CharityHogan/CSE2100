@@ -1,11 +1,11 @@
-using System.Configuration.Assemblies;
+using System;
 
-public class words
+public class Word
 {
     private string _text;
     private bool _isHidden;
 
-    public words(string text)
+    public Word(string text)
     {
         _text = text;
         _isHidden = false;
@@ -24,8 +24,12 @@ public class words
     public string GetDisplayText()
     {
         if (_isHidden)
+        {
             return new string('_', _text.Length);
+        }
         else
+        {
             return _text;
+        }
     }
 }
