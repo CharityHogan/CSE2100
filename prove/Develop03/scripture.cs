@@ -36,13 +36,24 @@ public class Scripture
             }
         }
 
-        PublicKey string GetDisplayText()
+        Public string GetDisplayText()
         {
             List<string> displayWords = new List<string>();
             foreach (words word in _words)
             {
                 displayWords.Add(word.GetDisplayText());
             }
+            return _reference.GetDisplayText() + " - " + string.Join("", displayWords);
+
+        }
+        Public bool IsCompletelyHidden()
+        {
+            foreach (words word in _words)
+            {
+                if (!word.IsHidden())
+                    return false;
+            }
+            return true;
         }
     }
 }
