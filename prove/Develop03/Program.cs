@@ -24,5 +24,17 @@ class Program
     Console.writeLine(scripture.GetDisplayText());
         console.writeLine("\nPress enter to hide more words or type 'quit' to end:");
         string input = Console.ReadLine();
+
+        if (input.ToLower() == "quit")
+        break;
+
+        scripture.HodeRandomWords(3, random);
+        if (scripture.IsCompletelyHidden())
+        {
+            SafeClear();
+    Console.WriteLine(scripture.GetDisplayText());
+            Console.WriteLine("\nAll words are hidden. Great job memorizing!");
+            break;
+        }
     }
 }
