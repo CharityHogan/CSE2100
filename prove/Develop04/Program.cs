@@ -16,4 +16,21 @@ class Activity
         Console.Write("Get ready...");
         Pause(3);
     }
+
+    public void End()
+    {
+        Console.WriteLine("Well done!");
+        Console.WriteLine("You have completed the " + Name + " Activity for " + Duration + " seconds.");
+        Pause(3);
+    }
+
+    public void Pause(int seconds)
+    {
+        for (int i = 0; i < seconds; i++)
+        {
+            Console.Write(".");
+            Thread.Sleep(1000);
+        }
+        Console.WriteLine();
+    }
 }
