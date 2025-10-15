@@ -13,5 +13,9 @@ public class shape
     {
         return _color;
     }
-    
+
+    public virtual double GetArea()
+    {
+        return 0;
+    }
 }
