@@ -1,6 +1,6 @@
 using System;
 
-public class Square : Shape
+public class Square : shape
 {
     private double _side;
 
@@ -13,5 +13,5 @@ public class Square : Shape
     {
         return _side * _side;
     }
-    
+
 }
