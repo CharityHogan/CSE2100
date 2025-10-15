@@ -8,4 +8,10 @@ public class shape
     {
         _color = color;
     }
+
+    public string GetColor()
+    {
+        return _color;
+    }
+    
 }
