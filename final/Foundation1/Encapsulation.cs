@@ -1,9 +1,9 @@
 using System;
 using System.Collections.Generic;
 
-class program
+class EncapsulationDemo
 {
-    static void Main()
+    public static void Run()
     {
         Address address1 = new Address("123 Main St", "Dallas", "TX", "USA");
         Customer customer1 = new Customer("Alice", address1);
