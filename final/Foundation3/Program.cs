@@ -8,8 +8,8 @@ class Program
         Address address1 = new Address("100 Main St", "New Yourk", "NY", "USA");
 
         Lecture lecture = new Lecture("C# Basics", "Learn the basics of C#", "Nov 10", "10:00 AM", address1, "Dr. Smith", 50);
-        Reception reception = new RankException("Tech Meetup", "Networking for developers", "Dec 5", "6:00 PM", address1, "rsvp@techmeet.com");
-        OutdoorGathering outdoor = new outDoorGathering("Picnic Day", "Fun outdoor games", "May 15", "12:00 PM", address1, "Sunny");
+        Reception reception = new Reception("Tech Meetup", "Networking for developers", "Dec 5", "6:00 PM", address1, "rsvp@techmeet.com");
+        OutdoorGathering outdoor = new OutdoorGathering("Picnic Day", "Fun outdoor games", "May 15", "12:00 PM", address1, "Sunny");
 
         Event[] events = { lecture, reception, outdoor };
 
