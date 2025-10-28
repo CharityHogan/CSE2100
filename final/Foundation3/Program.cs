@@ -29,3 +29,22 @@ class Program
 
 
 class Address
+{
+    private string street;
+    private string city;
+    private string state;
+    private string country;
+
+    public Address(string s, string c, string st, string co)
+    {
+        street = s;
+        city = c;
+        state = st;
+        country = co;
+    }
+
+    public string GetFullAddress()
+    {
+        return street + ", " + city + ", " + state + ", " + country;
+    }
+}
