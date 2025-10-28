@@ -56,6 +56,33 @@ class Activity
 
 }
 
+class Running : Activity
+{
+    private double distance;
+
+    public Running(string d, int m, double dist) : base(d, m)
+    {
+        distance = dist;
+    }
+
+    public override double GetDistance()
+    {
+        return distance;
+    }
+    public override double GetSpeed()
+    {
+        return (distance / minutes) * 60;
+    }
+    public override double GetPace()
+    {
+        return minutes / distance;
+    }
+
+    public override string GetSummary()
+    {
+        return date + " Running (" + minutes + " min) - Distance " + GetDistance() + "miles, Speed " + GetSpeed().ToString("0.0") + " mph, Pace " + GetPace().ToString("0.0") + " min/mile";
+    }
+}
 
 
 
