@@ -1,12 +1,67 @@
 using System;
+using System.Collections.Generic;
+using System.Diagnostics;
 
 class Program
 {
-    static void Main(string[] args)
+    static void Main()
     {
-        Console.WriteLine("Hello Foundation4 World!");
+        List<Activity> activities = new List<Activity>();
+
+        activities.Add(new Running("Nov 3 2022", 30, 3.0));
+        activities.Add(new Cycling("Nov 4 2022", 45, 15.0));
+        activities.Add(new Swimming("Nov 5 2022", 25, 20));
+
+        foreach (Activity a in activities)
+        {
+            Console.WriteLine(a.GetSummary());
+        }
+
+        Console.ReadLine();
+
     }
 }
+
+class Activity
+{
+    protected string date;
+    protected int minutes;
+
+    public Activity(string d, int m)
+    {
+        date = d;
+        minutes = m;
+    }
+
+    public virtual double GetDistance()
+    {
+        return 0;
+    }
+
+    public virtual double GetSpeed()
+    {
+        return 0;
+    }
+
+    public virtual double GetPace()
+    {
+        return 0;
+    }
+
+    public virtual string GetSummary()
+    {
+        return date + " Activity (" + minutes + " min)";
+
+    }
+
+}
+
+
+
+
+
+
+
 
 // Program 1: Abstraciton with Youtube videos  
 //create a video class to store video info and a list of comments, then display each video's details and comments.
