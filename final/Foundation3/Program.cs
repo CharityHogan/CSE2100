@@ -48,3 +48,36 @@ class Address
         return street + ", " + city + ", " + state + ", " + country;
     }
 }
+
+class Event
+{
+    protected string title;
+    protected string description;
+    protected string date;
+    protected string time;
+    protected Address address;
+
+    public Event(string t, string d, string da, string ti, Address a)
+    {
+        title = t;
+        description = d;
+        date = da;
+        time = ti;
+        address = a;
+    }
+
+    public string StandardDetails()
+    {
+        return "Title: " + title + "\nDescription: " + description + "\nDate: " + date + "\nTime: " + time + "\nAddress: " + address.GetFullAddress();
+    }
+
+    public virtual string FullDetails()
+    {
+        return StandardDetails();
+    }
+
+    public virtual string ShortDescription()
+    {
+        return "Event: " + title + " on " + date;
+    }
+}
