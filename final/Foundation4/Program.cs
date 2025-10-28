@@ -86,8 +86,65 @@ class Running : Activity
 
 
 
+class Cycling : Activity
+{
+    private double speed;
 
+    public Cycling(string d, int m, double s) : base(d, m)
+    {
+        speed = s;
+    }
 
+    public override double GetSpeed()
+    {
+        return speed;
+    }
+
+    public override double GetDistance()
+    {
+        return (speed * minutes) / 60;
+    }
+
+    public override double GetPace()
+    {
+        return 60 / speed;
+    }
+
+    public override string GetSummary()
+    {
+        return date + " Cycling (" + minutes + " min) - Distance " + GetDistance().ToString("0.0") + " miles, Speed " + GetSpeed().ToString("0.0") + " mph, Pace " + GetPace().ToString("0.0") + " min/mile";
+    }
+}
+
+class Swimming : Activity
+{
+    private int laps;
+
+    public Swimming(string d, int m, int l) : base(d, m)
+    {
+        laps = l;
+    }
+
+    public override double GetDistance()
+    {
+        return laps * 50 / 1000.0 * 0.62; // miles
+    }
+
+    public override double GetSpeed()
+    {
+        return (GetDistance() / minutes) * 60;
+    }
+
+    public override double GetPace()
+    {
+        return minutes / GetDistance();
+    }
+
+    public override string GetSummary()
+    {
+        return date + " Swimming (" + minutes + " min) - Distance " + GetDistance().ToString("0.0") + " miles, Speed " + GetSpeed().ToString("0.0") + " mph, Pace " + GetPace().ToString("0.0") + " min/mile";
+    }
+}
 
 
 // Program 1: Abstraciton with Youtube videos  
