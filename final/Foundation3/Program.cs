@@ -81,3 +81,68 @@ class Event
         return "Event: " + title + " on " + date;
     }
 }
+
+class Lecture : Event
+{
+    private string speaker;
+    private int capacity;
+
+    public Lecture(string t, string d, string da, string ti, Address a, string s, int c)
+        : base(t, d, da, ti, a)
+    {
+        speaker = s;
+        capacity = c;
+    }
+
+    public override string FullDetails()
+    {
+        return StandardDetails() + "\nType: Lecture\nSpeaker: " + speaker + "\nCapacity: " + capacity;
+    }
+
+    public override string ShortDescription()
+    {
+        return "Lecture: " + title + " on " + date;
+    }
+}
+
+class Reception : Event
+{
+    private string email;
+
+    public Reception(string t, string d, string da, string ti, Address a, string e)
+        : base(t, d, da, ti, a)
+    {
+        email = e;
+    }
+
+    public override string FullDetails()
+    {
+        return StandardDetails() + "\nType: Reception\nRSVP Email: " + email;
+    }
+
+    public override string ShortDescription()
+    {
+        return "Reception: " + title + " on " + date;
+    }
+}
+
+class OutdoorGathering : Event
+{
+    private string weather;
+
+    public OutdoorGathering(string t, string d, string da, string ti, Address a, string w)
+        : base(t, d, da, ti, a)
+    {
+        weather = w;
+    }
+
+    public override string FullDetails()
+    {
+        return StandardDetails() + "\nType: Outdoor Gathering\nWeather: " + weather;
+    }
+
+    public override string ShortDescription()
+    {
+        return "Outdoor Gathering: " + title + " on " + date;
+    }
+}
